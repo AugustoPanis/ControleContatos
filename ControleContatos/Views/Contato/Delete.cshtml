@@ -1,0 +1,25 @@
+﻿@model ControleContatos.Models.Contato
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="text-center">
+
+<div>
+    <h4>Contato</h4>
+       
+    <h4 class="display-4">
+        Deseja realmente excluir o contato (@Html.DisplayFor(model => model.Nome))?
+    </h4>
+
+    
+   <form asp-action="Delete" onsubmit="return confirm('Tem certeza absoluta que deseja apagar este registro?')">
+    <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Excluir" class="btn btn-danger" />
+            <a class="btn btn-secondary" asp-action="Index">Voltar</a>
+        </form>
+</div>
+
+
+
